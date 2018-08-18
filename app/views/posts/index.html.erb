@@ -1,0 +1,12 @@
+<h2>
+  <%= link_to 'Add new', new_post_path, class: 'header_menu' %>
+  My Posts
+</h2>
+<ul>
+  <% @posts.each do |post| %>
+  <li>
+    <%= link_to post.title,post_path(post.id) %>
+    <%= link_to '[EDIT]', edit_post_path(post), class: 'command' %>
+  </li>
+  <% end %>
+</ul>
